@@ -146,16 +146,17 @@ function layChiTiet(id) {
 // cập nhật người dùng 
 function capNhat(id) {
     var nd = layDuLieu();
-    ndServices.capNhat(nd,id)
-    .then(function(response){
-        console.log(response.data);
-        layDSNN();
-        document.querySelector("#myModal .close").click();
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-
+    if (nd != 0) {
+        ndServices.capNhat(nd, id)
+            .then(function (response) {
+                console.log(response.data);
+                layDSNN();
+                document.querySelector("#myModal .close").click();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 }
 
 // xóa

@@ -89,8 +89,8 @@ function Validation() {
         }
     }
     this.checkLength = function(inputval, spanID, message){
-        var pattern =  /^([a-zA-Z0-9_-]){1,60}$/;
-        if(inputval.match(pattern)){
+        var pattern =  /([a-zA-Z1-9 +àáảạãâầấẩậẫđèéẻẹẽêềếểệễìíỉịĩòóỏọõơờớởợỡôồốổộỗùúủụũưừứửựữỳýỷỵỹ &.,]){1,60}/;
+        if(inputval.match(pattern) && inputval.length <= 60){
             //hợp lệ
             document.getElementById(spanID).innerHTML = "";
             return true;
