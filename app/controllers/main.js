@@ -99,6 +99,7 @@ function themND() {
                     .then(function (response) {
                         console.log(response.data);
                         layDSNN();
+                        reserForm();
                         document.querySelector("#myModal .close").click();
                     })
                     .catch(function (error) {
@@ -151,6 +152,7 @@ function capNhat(id) {
             .then(function (response) {
                 console.log(response.data);
                 layDSNN();
+                reserForm();
                 document.querySelector("#myModal .close").click();
             })
             .catch(function (error) {
@@ -169,5 +171,11 @@ function xoa(id) {
         .catch(function (error) {
             console.log(error);
         });
+}
+
+// reset
+function reserForm() {
+    document.getElementById("QLTT").reset();
+    document.getElementById("TaiKhoan").disabled = false;
 }
 
